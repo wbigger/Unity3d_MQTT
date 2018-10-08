@@ -53,6 +53,9 @@ public class mqttTest : MonoBehaviour
         // listen to the state "out" topic
         client.Subscribe(new string[] { "sonoff17/out" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
 
+		lamp.enabled = false;
+		lamp.intensity = 10;
+
     }
     void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
     {
